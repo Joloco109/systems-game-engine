@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 TEST(server, cpp_api) {
-  Domain internet = network{"Global", InvisiblePolicy}; // can list components, but can connect openly
+  Domain internet = network{"Global", InvisiblePolicy}; // can not list components, but can connect openly
   Domain lan = network{"CoinAcid", ClosedPolicy}; // can not add components or connection, without being owner
   {
     Component database_server = System{"db.coinacid.biz", SystemState::Normal};
